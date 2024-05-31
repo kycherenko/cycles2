@@ -1,21 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        int total = 0;
-        int month = 0;
-        while (total < 2_459_000) {
-            total = total + total / 100;
-            total += 15000;
-            month++;
-        }
         {
-            System.out.println("Месяц " + month + " сумма накоплений равна " + total + " рублей");
+            int initialAmount = 0;
+            int month = 0;
+            while (initialAmount < 2_459_000) {
+                initialAmount = initialAmount + initialAmount / 100;
+                initialAmount += 15_000;
+                month++;
+                System.out.println("Месяц " + month + " сумма накоплений равна " + initialAmount + " рублей");
+            }
         }
-        System.out.println(" ");
+        System.out.println();
         int i = 0;
         while (i < 10) {
             i++;
             System.out.print(i + " ");
-
         }
         System.out.println(" ");
         for (; i >= 1; i--) {
@@ -32,36 +31,39 @@ public class Main {
             }
             System.out.println(" ");
             {
-                int mon = 1;
-                int sum = 15000;
-                while (sum <= 12_000_000) {
-                    sum = sum + (sum * 7 / 100);
-                    System.out.println("Месяц " + mon + " сумма накоплений " + sum);
-                    mon++;
+                int month = 1;
+                int initialAmount = 15_000;
+                while (initialAmount <= 12_000_000) {
+                    initialAmount = initialAmount + (initialAmount * 7 / 100);
+                    System.out.println("Месяц " + month + " сумма накоплений " + initialAmount);
+                    month++;
                 }
             }
             System.out.println(" ");
             {
-                int mon = 1;
+                int month = 1;
                 int sum = 15000;
                 while (sum <= 12_000_000) {
-                    sum = sum + (sum * 7 / 100);
-                    if (mon % 6 == 0) {
-                        System.out.println("Месяц " + mon + " сумма накоплений " + sum);
+                    int percent = sum * 7 / 100;
+                    sum = sum + percent;
+                    if (month % 6 == 0) {
+                        System.out.println("Месяц " + month + " сумма накоплений " + sum);
                     }
-                    mon++;
+                    month++;
                 }
             }
             System.out.println(" ");
             {
-                int mon = 1;
+                int month = 1;
                 int sum = 15000;
-                while (mon <= 108) {
-                    sum = sum + (sum * 7 / 100);
-                    if (mon % 6 == 0) {
-                        System.out.println("Месяц " + mon + " сумма накоплений " + sum);
+                int date = 12 * 9;
+                while (month <= date) {
+                    int percent = sum * 7 / 100;
+                    sum = sum + percent;
+                    if (month % 6 == 0) {
+                        System.out.println("Месяц " + month + " сумма накоплений " + sum);
                     }
-                    mon++;
+                    month++;
                 }
             }
             System.out.println(" ");
